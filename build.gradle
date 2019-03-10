@@ -1,0 +1,53 @@
+plugins {
+  id 'all.shared.gradle.project-style-checker' version '1.0.2'
+  id 'all.shared.gradle.code-common-tasks' version '1.0.1'
+  id 'com.moowork.node' version '1.2.0'
+}
+
+repositories {
+  jcenter()
+}
+
+final MAIN_FOLDER = "$projectDir/src/main"
+final TEST_FOLDER = "$projectDir/src/test"
+
+node {
+  version = NODE_VERSION
+  download = true
+}
+
+task assessStyleMain(type: NpmTask) {
+  args = ['run', 'gradle-main-lint', '--silent', baseStyleConfig.front.eslintNpmConfigArg]
+  group codeCommonTasks.groupForAssessTasks
+  inputs.property('configFile', baseStyleConfig.front.stylelintNpmConfigArg)
+  inputs.dir MAIN_FOLDER
+}
+
+task assessTypingMain(type: NpmTask) {
+  args = ['run', 'main-flow', '--silent']
+  inputs.files '.flowconfig'
+  inputs.dir MAIN_FOLDER
+  shouldRunAfter 'assessStyleMain'
+}
+
+task assessMain {
+  dependsOn 'assessStyleMain', 'assessTypingMain'
+}
+
+task assessStyleTest(type: NpmTask) {
+  args = ['run', 'gradle-test-lint', '--silent', baseStyleConfig.front.eslintNpmConfigArg]
+  inputs.property('configFile', baseStyleConfig.front.eslintNpmConfigArg)
+  inputs.dir TEST_FOLDER
+}
+
+task assessUnitTest {
+  dependsOn 'assessStyleTest'
+}
+
+task unitTest(type: NpmTask) {
+  args = ['run', 'test', '--silent']
+  inputs.files MAIN_FOLDER
+  inputs.files TEST_FOLDER
+}
+
+defaultTasks 'assessCommon', 'assessGradle', 'npmInstall', 'check'

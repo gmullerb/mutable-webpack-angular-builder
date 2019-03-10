@@ -1,0 +1,17 @@
+[include]
+src/main/**/*.js
+
+[ignore]
+.*/.gradle/.*
+.*/node_modules/.*
+.*/build/.*
+.*\.conf\.js
+.*/src/test/.*\.js
+
+[libs]
+flow-typed
+
+[options]
+all=true
+emoji=true
+module.ignore_non_literal_requires=true

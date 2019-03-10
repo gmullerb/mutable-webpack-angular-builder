@@ -1,0 +1,27 @@
+{
+  "id": "mutable-webpack-angular-builder:browser",
+  "title": "Mutable Webpack Browser Builder",
+  "properties": {
+    "assets": {
+      "default": []
+    },
+    "scripts": {
+      "default": []
+    },
+    "styles": {
+      "default": []
+    },
+    "fileReplacements": {
+      "default": []
+    },
+    "sourceMap": {
+      "default": true
+    },
+    "vendorChunk": {
+      "default": true
+    },
+    "commonChunk": {
+      "default": true
+    }
+  }
+}

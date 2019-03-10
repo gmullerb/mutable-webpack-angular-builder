@@ -1,0 +1,57 @@
+{
+  "name": "mutable-webpack-angular-builder",
+  "description": "Allows to mutate the webpack configuration before is being used by @angular-devkit/build-angular:browser",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Gonzalo Müller Bravo",
+  "builders": "src/main/builders.json",
+  "main": "src/main/index.js",
+  "homepage": "https://github.com/gmullerb/mutable-webpack-angular-builder",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmullerb/mutable-webpack-angular-builder"
+  },
+  "keywords": [
+    "angular",
+    "devkit",
+    "angular-devkit",
+    "build-angular",
+    "builders",
+    "webpack",
+    "mutable",
+    "mutator",
+    "mutate",
+    "custom",
+    "ng",
+    "cli",
+    "react"
+  ],
+  "peerDependencies": {
+    "@angular-devkit/build-angular": "*"
+  },
+  "scripts": {
+    "gradle-main-lint": "eslint --config ${npm_config_eslintConfigFile} --color src/main/**/*.js",
+    "gradle-test-lint": "eslint --config ${npm_config_eslintConfigFile} --color src/test/**/*.js",
+    "main-flow": "flow check --color=always src/main",
+    "test": "karma start --colors"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@flowjs/flow.js": "^2.13.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.15.1",
+    "flow-bin": "^0.94.0",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jsdom": "^14.0.0",
+    "jasmine-core": "^3.3.0",
+    "karma": "^4.0.1",
+    "karma-coverage-istanbul-reporter": "^2.0.5",
+    "karma-jasmine": "^2.0.1",
+    "karma-jsdom-launcher": "^7.1.0",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-webpack": "^3.0.5",
+    "webpack": "^4.29.6"
+  }
+}

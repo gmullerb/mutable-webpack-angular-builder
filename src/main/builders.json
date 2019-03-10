@@ -1,0 +1,10 @@
+{
+  "$schema": "@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "browser": {
+      "class": "./",
+      "schema": "./schema.json",
+      "description": "Allows to mutate the webpack configuration before is being used by @angular-devkit/build-angular:browser"
+    }
+  }
+}

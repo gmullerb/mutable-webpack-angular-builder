@@ -1,0 +1,12 @@
+# Folders
+.gradle/
+build/
+node_modules/
+# IDEs
+.vscode
+.vscode/
+.project
+.classpath
+.settings/
+# Files
+*.log
