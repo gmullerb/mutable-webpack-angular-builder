@@ -178,7 +178,7 @@ Then, the Mutator function can be:
 
 ## Extending/Developing
 
-[Developing](readme/developing)
+[Developing](readme/developing.md)
 
 ## Documentation
 
