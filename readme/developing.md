@@ -5,7 +5,7 @@
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads) [1].
 * [Git](https://git-scm.com/downloads) (only if you are going to clone the project).
 
-| [1] Node/Npm or Node/Yarn can be used.
+> [1] Node/Npm or Node/Yarn can be used.
 
 ## Getting it
 
@@ -21,7 +21,7 @@ git clone https://github.com/gmullerb/mutable-webpack-angular-builder
 
 * **No need**, only download and run (It's Gradle! Yes!).
 
-| Gradle will allow to have different really isolate Node/Npm environments for different projects.
+> Gradle will allow to have different really isolate Node/Npm environments for different projects, but `npm` or `yarn` can be used.
 
 ## Folders structure
 
@@ -53,17 +53,22 @@ git clone https://github.com/gmullerb/mutable-webpack-angular-builder
 
 * To "build" it:
   * `gradlew`: this will run default tasks:
-    * `assessCommon`, `assessGradle`, `npmInstall`, `check`
-      * `check`: will execute assess tasks and test tasks.
+    * `assessCommon`, `assessGradle`, `npmInstall`, `build`
+      * `build`: will also execute assess tasks and test tasks.
 
 * To get all the tasks for the project: `gradlew tasks --all`
 
-| Recommendation: First time run `gradlew` to start from a "ok" code.
+> Recommendation: First time run `gradlew` to start from a "ok" code.
 
 ### Node
 
-* "main-flow": will check Flow typings of main source files.
-* "test": will run test and coverage for the project.
+* "`main-flow`": will check Flow typings of main source files.
+* "`onlyGradle:main-lint`": will check eslint style of main source files [1].
+* "`onlyGradle:test-lint`": will check eslint style of test source files [1].
+* "`test`": will run test and coverage for the project.
+
+> There are some scripts that "only" can be run from gradle (prefixed with `onlyGradle:`), because gradle will download some files that are required by those tasks and set the respective npm config variables. To use it from node this must be done manually.  
+> [1] it will use eslint configuration defined in [base-style-config](https://github.com/gmullerb/base-style-config).
 
 ## Customizing Facts
 

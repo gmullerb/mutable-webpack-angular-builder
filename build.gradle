@@ -1,5 +1,5 @@
 plugins {
-  id 'all.shared.gradle.project-style-checker' version '1.0.2'
+  id 'all.shared.gradle.project-style-checker' version '1.0.7'
   id 'all.shared.gradle.code-common-tasks' version '1.0.1'
   id 'com.moowork.node' version '1.2.0'
 }
@@ -17,9 +17,9 @@ node {
 }
 
 task assessStyleMain(type: NpmTask) {
-  args = ['run', 'gradle-main-lint', '--silent', baseStyleConfig.front.eslintNpmConfigArg]
+  args = ['run', 'onlyGradle:main-lint', '--silent', baseStyleConfig.js.eslintNpmConfigArg]
   group codeCommonTasks.groupForAssessTasks
-  inputs.property('configFile', baseStyleConfig.front.stylelintNpmConfigArg)
+  inputs.property('configFile', baseStyleConfig.js.eslintNpmConfigArg)
   inputs.dir MAIN_FOLDER
 }
 
@@ -35,8 +35,8 @@ task assessMain {
 }
 
 task assessStyleTest(type: NpmTask) {
-  args = ['run', 'gradle-test-lint', '--silent', baseStyleConfig.front.eslintNpmConfigArg]
-  inputs.property('configFile', baseStyleConfig.front.eslintNpmConfigArg)
+  args = ['run', 'onlyGradle:test-lint', '--silent', baseStyleConfig.js.eslintNpmConfigArg]
+  inputs.property('configFile', baseStyleConfig.js.eslintNpmConfigArg)
   inputs.dir TEST_FOLDER
 }
 
@@ -50,4 +50,13 @@ task unitTest(type: NpmTask) {
   inputs.files TEST_FOLDER
 }
 
-defaultTasks 'assessCommon', 'assessGradle', 'npmInstall', 'check'
+task build(type: NpmTask) {
+  workingDir buildDir
+  args = ['pack', '../']
+}
+
+task publish(type: NpmTask) {
+  args = ['publish']
+}
+
+defaultTasks 'assessCommon', 'assessGradle', 'npmInstall', 'build'

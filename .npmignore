@@ -1,0 +1,28 @@
+# Folders
+.gradle/
+build/
+config/
+gradle/
+flow-typed/
+src/test/
+readme/
+# Files
+.eslintrc.json
+.flowconfig
+.gitlab-ci.yml
+gradlew
+gradlew.bat
+gradle.properties
+karma.conf.js
+*.gradle
+*.log
+# IDEs
+.vscode
+.vscode/
+theqtapp.pro.user
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.idea/

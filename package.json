@@ -1,27 +1,35 @@
 {
   "name": "mutable-webpack-angular-builder",
   "description": "Allows to mutate the webpack configuration before is being used by @angular-devkit/build-angular:browser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Gonzalo Müller Bravo",
   "builders": "src/main/builders.json",
   "main": "src/main/index.js",
-  "homepage": "https://github.com/gmullerb/mutable-webpack-angular-builder",
+  "homepage": "https://gitlab.com/gmullerb/mutable-webpack-angular-builder",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gmullerb/mutable-webpack-angular-builder"
+    "url": "https://gitlab.com/gmullerb/mutable-webpack-angular-builder"
   },
   "keywords": [
     "angular",
     "devkit",
+    "angular devkit",
     "angular-devkit",
+    "angular builder",
+    "angular-builder",
+    "build angular",
     "build-angular",
-    "builders",
+    "builder",
     "webpack",
     "mutable",
     "mutator",
     "mutate",
     "custom",
+    "angular cli",
+    "angular-cli",
+    "angular ng",
+    "angular-ng",
     "ng",
     "cli",
     "react"
@@ -30,8 +38,8 @@
     "@angular-devkit/build-angular": "*"
   },
   "scripts": {
-    "gradle-main-lint": "eslint --config ${npm_config_eslintConfigFile} --color src/main/**/*.js",
-    "gradle-test-lint": "eslint --config ${npm_config_eslintConfigFile} --color src/test/**/*.js",
+    "onlyGradle:main-lint": "eslint --config ${npm_config_eslintConfigFile} --color src/main/**/*.js",
+    "onlyGradle:test-lint": "eslint --config ${npm_config_eslintConfigFile} --color src/test/**/*.js",
     "main-flow": "flow check --color=always src/main",
     "test": "karma start --colors"
   },

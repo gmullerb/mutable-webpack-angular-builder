@@ -48,8 +48,8 @@ module.exports = (sourceWebpack) => {
 
 Many things in Angular Ng processes are **hard-coded** and it is difficult to do some advanced customization[1]. The purpose of mutable-webpack-angular-builder is to allow for **fully modification of the Webpack Configuration provided by Angular** for more "advanced" uses.
 
-| [1] Angular Ng processes are quite closed (and documentation is sometimes scattered and with a lot of "WIP").  
-| There are other builders like @angular-builders/custom-webpack, which allows only to do merging of Webpack options.
+> [1] Angular Ng processes are quite closed (and documentation is sometimes scattered and with a lot of "WIP").  
+> There are other builders like @angular-builders/custom-webpack, which allows only to do merging of Webpack options.
 
 ## Using/Configuration
 
@@ -79,7 +79,7 @@ Many things in Angular Ng processes are **hard-coded** and it is difficult to do
     ..
 ```
 
-| Usually set as `"builder": "@angular-devkit/build-angular:browser"`.
+> Usually set as `"builder": "@angular-devkit/build-angular:browser"`.
 
 3 . Add `"mutatorFile"` option to the builder to indicate the file that will contain the function that mutates the Webpack configuration:
 
@@ -92,8 +92,8 @@ Many things in Angular Ng processes are **hard-coded** and it is difficult to do
     ..
 ```
 
-| `mutatorFile` option is an additional option introduced by mutable-webpack-angular-builder.  
-| If the option is not defined, then mutable-webpack-angular-builder:browser will silently "fail", i.e. no mutation will be applied.
+> `mutatorFile` option is an additional option introduced by mutable-webpack-angular-builder.  
+> If the option is not defined, then mutable-webpack-angular-builder:browser will silently "fail", i.e. no mutation will be applied.
 
 4 . Create the function that mutates the Webpack configuration:
 
@@ -122,7 +122,7 @@ E.g: The following removes some module rules that do not work quite well with Re
 }
 ```
 
-| For an actual use example, see [basecode-ionic-react project](https://github.com/gmullerb/basecode-ionic-react)
+> For an actual use example, see [basecode-ionic-react project](https://github.com/gmullerb/basecode-ionic-react)
 
 5 . Export the mutator function using CommonJs (which is what is use by Angular Ng to load this):
 
@@ -174,7 +174,6 @@ Then, the Mutator function can be:
   return sourceWebpack // return the Modified Webpack Configuration
 }
 ```
-
 
 ## Extending/Developing
 

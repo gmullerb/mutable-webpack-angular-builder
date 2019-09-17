@@ -1,3 +1,5 @@
+// Copyright (c) 2019 Gonzalo Müller Bravo.
+
 const path = require('path')
 const obtainMock = (mock) => path.resolve(__dirname, 'src/test/mocks/', mock + '.mock.js')
 
