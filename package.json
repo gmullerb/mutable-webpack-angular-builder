@@ -1,7 +1,7 @@
 {
   "name": "mutable-webpack-angular-builder",
   "description": "Allows to mutate the webpack configuration before is being used by @angular-devkit/build-angular:browser",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "license": "MIT",
   "author": "Gonzalo Müller Bravo",
   "builders": "src/main/builders.json",
@@ -9,7 +9,10 @@
   "homepage": "https://gitlab.com/gmullerb/mutable-webpack-angular-builder",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/gmullerb/mutable-webpack-angular-builder"
+    "url": "https://github.com/gmullerb/mutable-webpack-angular-builder"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/gmullerb/mutable-webpack-angular-builder/issues"
   },
   "keywords": [
     "angular",
