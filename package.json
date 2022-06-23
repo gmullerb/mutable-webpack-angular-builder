@@ -54,7 +54,7 @@
     "eslint": "^5.15.1",
     "flow-bin": "^0.94.0",
     "istanbul-instrumenter-loader": "^3.0.1",
-    "jsdom": "^14.0.0",
+    "jsdom": "^16.5.0",
     "jasmine-core": "^3.3.0",
     "karma": "^4.0.1",
     "karma-coverage-istanbul-reporter": "^2.0.5",
